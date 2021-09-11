@@ -4,7 +4,7 @@ module stick
 # hacky stuff for getting local Python virtualenv to work correctly with Julia
 ENV["PYTHON"] = abspath(".venv/bin/python")
 ENV["PYTHONPATH"] = abspath(".venv/lib/site-packages")
-using PyCall
+using PyCall  # this needs to be pre-built in build.sh to work correctly
 Hash = pyimport("Crypto.Hash")
 EthABI = pyimport("eth_abi.packed")
 
