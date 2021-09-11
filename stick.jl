@@ -11,7 +11,6 @@ EthABI = pyimport("eth_abi.packed")
 #using Web3  # alternative to the PyCall method above
 using Random
 using Dates
-#using BitIntegers
 
 function packMine(chainId, entropy, gemAddr, senderAddr, kind, nonce, salt)
     return EthABI.encode_abi_packed(
