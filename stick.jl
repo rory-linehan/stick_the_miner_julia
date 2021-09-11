@@ -8,7 +8,7 @@ using PyCall
 Hash = pyimport("Crypto.Hash")
 EthABI = pyimport("eth_abi.packed")
 
-#using Web3  # we'll try this after the PyCall method is working
+#using Web3  # alternative to the PyCall method above
 using Random
 using Dates
 
