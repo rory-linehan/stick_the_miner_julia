@@ -1,0 +1,3 @@
+Crypto
+eth_abi
+eth-hash[pycryptodome]
