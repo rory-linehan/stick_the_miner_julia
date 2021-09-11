@@ -11,10 +11,11 @@ EthABI = pyimport("eth_abi.packed")
 #using Web3  # alternative to the PyCall method above
 using Random
 using Dates
+#using BitIntegers
 
 function packMine(chainId, entropy, gemAddr, senderAddr, kind, nonce, salt)
     return EthABI.encode_abi_packed(
-        ["uint256", "uint256", "address", "address", "uint", "uint", "uint"],
+        ["uint8", "uint256", "address", "address", "uint8", "uint128", "uint128"],
         (chainId, entropy, gemAddr, senderAddr, kind, nonce, salt)
     )
 end
@@ -31,13 +32,13 @@ function getSalt()::UInt128
 end
 
 function main()
-    chainId = 1
+    chainId::UInt8 = 250
     entropy = 0x949f147e5fb733f43d887bd3f9455dad768029a75baa8c63ec2d749439935d59
     gemAddr::String = "0xC67DED0eC78b849e17771b2E8a7e303B4dAd6dD4"
     userAddr::String = "0xFe9C7c2BD25d91B4f2E9C6AE83C11e1465eC63F0"
-    kind = 0
-    nonce = 0
-    diff = 1
+    kind::UInt8 = 0
+    nonce::UInt128 = 0
+    diff::UInt128 = 1
 
     target = ^(2, 256) / diff
 
